@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './index.css'
 import { RootLayout } from './layout.jsx'
-import Home from './pages/home.jsx';
-import Login from './pages/login.jsx';
+import { Home, Login} from '@/pages'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,8 +12,8 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path='login' element={<Login />} />
         </Route>
+        <Route path='login' element={<Login />} />
       </Routes>
       <RootLayout />
     </BrowserRouter>
