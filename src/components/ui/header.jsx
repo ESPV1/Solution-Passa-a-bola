@@ -1,5 +1,5 @@
-function Header(){
-    return(
+export default function Header() {
+    return (
         <header className="w-full px-4 py-2 grid [grid-template-columns:0.5fr_1fr] border border-gray-300 items-center">
             <h2>Passa a bola</h2>
             <nav className="flex items-center justify-around">
@@ -17,5 +17,3 @@ function Header(){
         </header>
     )
 }
-
-export default Header
