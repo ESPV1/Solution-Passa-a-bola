@@ -1,6 +1,6 @@
 import escudo from "@/assets/escudo-time.png";
 
-export const times = [
+export const listaTimes = [
   { id: 1, nome: "Leonas FC", rank: "A", estado: "São Paulo", logo: escudo },
   { id: 2, nome: "Aurora United", rank: "B", estado: "Rio de Janeiro", logo: escudo },
   { id: 3, nome: "Estrelas do Sul", rank: "A", estado: "Minas Gerais", logo: escudo },
