@@ -1,5 +1,5 @@
-function Footer(){
-    return(
+export default function Footer() {
+    return (
         <footer className="grid grid-cols-3 border border-indigo-300 px-8 py-8">
             <section className="flex flex-col gap-10 border-r-2 border-indigo-500">
                 <div>
@@ -35,5 +35,3 @@ function Footer(){
     )
 
 }
-
-export default Footer

@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
 import { RootLayout } from './layout.jsx'
 import { Home, Login, PerfilTorcedor, Quadras} from '@/pages'
-import Footer from './components/Footer/Footer.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,8 +17,6 @@ createRoot(document.getElementById('root')).render(
         </Route>
         <Route path='login' element={<Login />} />
       </Routes>
-      <RootLayout />
     </BrowserRouter>
-    <Footer/>
   </StrictMode>
 )

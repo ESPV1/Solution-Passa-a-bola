@@ -20,7 +20,13 @@ export default function Input({
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
 
-    inputRef.current?.focus();
+    setTimeout(() => { inputRef.current?.focus() }, 0);
+  };
+
+  const handleFocus = (e) => {
+    const input = e.target;
+    const length = input.value.length;
+    setTimeout(() => { input.setSelectionRange(length, length) }, 0);
   };
 
   return (
@@ -33,6 +39,7 @@ export default function Input({
         required={required}
         className={clsx(defaultInputClasses, inputStyle)}
         placeholder=" "
+        onFocus={handleFocus}
         style={{
           WebkitBoxShadow: '0 0 0 1000px white inset',
           WebkitTextFillColor: '#1f2937'
@@ -41,7 +48,7 @@ export default function Input({
       {type === 'password' && (
         <button
           type="button" onClick={togglePasswordVisibility}
-          className="absolute right-3 top-1/5 text-gray-500 hover:text-rose-500 transition-colors duration-200 focus:outline-none focus:text-rose-500"
+          className="absolute right-3 top-1/5 text-gray-500 transition-colors duration-200 focus:outline-none focus:text-rose-500"
           aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
         >
           {showPassword ? <EyeClosed className="hover:cursor-pointer" /> : <Eye className="hover:cursor-pointer" />}
