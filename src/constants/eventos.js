@@ -1,10 +1,8 @@
 export const eventos = [
-        { titulo: "Copa das Minas – Etapa Centro", desc: "Fase de grupos no ginásio municipal. Inscrições abertas." },
-        { titulo: "Taça Primavera Sub-17", desc: "Torneio de base com seletiva para clubes parceiros." },
-        { titulo: "Festival de Base Feminina", desc: "Jogos amistosos e integração entre escolinhas." },
-        { titulo: "Peneira Passa a Bola", desc: "Avaliação técnica para formação de elenco sub-20." },
-        { titulo: "Amistoso Solidário", desc: "Partida beneficente com arrecadação de alimentos." },
-        { titulo: "Torneio Relâmpago", desc: "Eliminação simples; partidas de 20 minutos." },
-        { titulo: "Clínica de Finalização", desc: "Treino focado em finalização e movimentação ofensiva." },
-        { titulo: "Workshop de Goleiras", desc: "Treinamento específico para goleiras com preparador." }
-    ];
+  { titulo: "Copa das Minas – Etapa Centro", desc: "Fase de grupos no ginásio municipal, com partidas emocionantes e grande presença da torcida local. As equipes disputam vaga para a semifinal." },
+  { titulo: "Taça Primavera Sub-17", desc: "Torneio de base que reúne jogadoras de diversas regiões, com seletiva para clubes parceiros e observação de olheiros profissionais." },
+  { titulo: "Festival de Base Feminina", desc: "Jogos amistosos e atividades de integração entre escolinhas, promovendo a troca de experiências e incentivando novas atletas." },
+  { titulo: "Peneira Passa a Bola", desc: "Avaliação técnica completa para formação de elenco sub-20, com foco em fundamentos, preparo físico e trabalho coletivo." },
+  { titulo: "Amistoso Solidário", desc: "Partida beneficente entre times locais com arrecadação de alimentos e roupas, unindo esporte e solidariedade." },
+  { titulo: "Torneio Relâmpago", desc: "Competição de eliminação simples, com jogos de 20 minutos, garantindo dinamismo e emoção a cada rodada." },
+];

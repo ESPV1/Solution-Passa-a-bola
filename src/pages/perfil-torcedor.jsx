@@ -4,19 +4,12 @@ import { eventos } from "../constants/eventos";
 
 export default function PerfilTorcedor() {
     return (
-        <main className="mx-auto p-8 max-w-7xl min-h-[80vh] grid place-items-center mt-10 md:mt-14">
-            <section className="w-full">
-                
-                {/* Container principal */}
-                <header className="mb-6 text-center">
-                    <h1 className="text-4xl font-semibold tracking-wide text-rose-500">
-                        Perfil Torcedor
-                    </h1>
-                </header>
+        <main className="w-full min-h-screen flex items-center justify-center px-8">
+            <section className="w-full max-w-[90rem]">
 
-                <div className="flex items-start justify-center gap-14">
-                    {/* Foto de perfil e dados */}
-                    <aside className="flex flex-col items-center self-center text-center gap-3">
+                <div className="flex w-full items-start justify-between gap-10">
+                    {/* Foto e dados do torcedor */}
+                    <aside className="shrink-0 flex flex-col items-center text-center gap-3">
                         <img
                             src={fotoTorcedor}
                             alt="Foto do torcedor"
@@ -29,17 +22,17 @@ export default function PerfilTorcedor() {
                     </aside>
 
                     {/* Inscrições */}
-                    <section className="flex-1 max-w-6xl">
-                        <div className="bg-rose-50 rounded-2xl p-8 shadow border border-rose-200">
+                    <section className="flex-1 w-full min-w-0">
+                        <div className="w-full bg-rose-50 rounded-2xl p-8 shadow border border-rose-200">
                             <h3 className="text-2xl tracking-wide uppercase text-rose-700 font-bold">
                                 Inscrições
                             </h3>
 
-                            <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
+                            <div className="grid grid-cols-3 gap-6 mt-4">
                                 {eventos.map((ev) => (
                                     <article
                                         key={ev.titulo}
-                                        className="flex flex-col justify-between rounded-2xl border border-rose-200 bg-white p-6"
+                                        className="flex flex-col justify-between rounded-2xl border border-rose-200 bg-white p-6 min-h-[220px]"
                                     >
                                         <div>
                                             <h4 className="font-medium text-rose-700">{ev.titulo}</h4>
@@ -47,7 +40,7 @@ export default function PerfilTorcedor() {
                                         </div>
                                         <button
                                             type="button"
-                                            className="mt-4 px-3 py-1.5 text-sm rounded-full bg-rose-500 text-white"
+                                            className="mt-4 px-3 py-1.5 text-sm rounded-full bg-rose-500 text-white hover:bg-rose-600 transition"
                                         >
                                             Cancelar
                                         </button>
