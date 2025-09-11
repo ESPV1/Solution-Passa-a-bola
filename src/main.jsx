@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './index.css'
 import { RootLayout } from './layout.jsx'
-import { Home, Login} from '@/pages'
+import { Home, Login, Quadras} from '@/pages'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -12,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
+          <Route path="quadras" element={<Quadras />} />
         </Route>
         <Route path='login' element={<Login />} />
       </Routes>
