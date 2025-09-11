@@ -6,6 +6,5 @@ export const eventos = [
         { titulo: "Amistoso Solidário", desc: "Partida beneficente com arrecadação de alimentos." },
         { titulo: "Torneio Relâmpago", desc: "Eliminação simples; partidas de 20 minutos." },
         { titulo: "Clínica de Finalização", desc: "Treino focado em finalização e movimentação ofensiva." },
-        { titulo: "Workshop de Goleiras", desc: "Treinamento específico para goleiras com preparador." },
-        { titulo: "Camp de Férias", desc: "Semana intensiva de fundamentos e tática." },
+        { titulo: "Workshop de Goleiras", desc: "Treinamento específico para goleiras com preparador." }
     ];
