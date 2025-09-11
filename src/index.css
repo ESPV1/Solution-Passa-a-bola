@@ -22,6 +22,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  overflow-x: hidden;
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -77,3 +78,38 @@ input::-moz-selection {
     background-color: #ffffff;
   }
 } */
+
+/* ===== scrollbar para navegadores webkit (Chrome, Edge, Safari) ===== */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; /* slate-100 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f43f5e; /* rose-500 */
+  border-radius: 10px;
+  border: 1px solid #fff; /* slate-100 para criar espaçamento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e11d48; /* rose-600 */
+}
+
+/* remove setas dos botões da barra (cross-browser webkit) */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ===== scrollbar para firefox ===== */
+html {
+  scrollbar-width: thin; /* estreita */
+  scrollbar-color: #f43f5e #fff; /* thumb | track */
+  scroll-behavior: smooth;
+}
