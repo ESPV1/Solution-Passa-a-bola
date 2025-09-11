@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Smith",
+    "cpf": "123.456.789-01",
+    "birthDate": "1985-03-15",
+    "gender": "male",
+    "email": "john.smith@email.com",
+    "password": "password123",
+    "type": "user"
+  },
+  {
+    "id": 2,
+    "firstName": "Emily",
+    "lastName": "Johnson",
+    "cpf": "987.654.321-02",
+    "birthDate": "1990-07-22",
+    "gender": "female",
+    "email": "emily.johnson@email.com",
+    "password": "securePass456",
+    "type": "user"
+  },
+  {
+    "id": 3,
+    "firstName": "Carlos",
+    "lastName": "Santos",
+    "cpf": "456.789.123-03",
+    "birthDate": "1988-12-10",
+    "gender": "male",
+    "email": "carlos.santos@email.com",
+    "password": "fanPass789",
+    "type": "fan"
+  },
+  {
+    "id": 4,
+    "firstName": "Maria",
+    "lastName": "Silva",
+    "cpf": "789.123.456-04",
+    "birthDate": "1992-05-18",
+    "gender": "female",
+    "email": "maria.silva@email.com",
+    "password": "supporterPass321",
+    "type": "fan"
+  }
+]
