@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './index.css'
 import { RootLayout } from './layout.jsx'
-import { Home, Login, PerfilTorcedor, Qudras} from '@/pages'
+import { Home, Login, PerfilTorcedor, Quadras} from '@/pages'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

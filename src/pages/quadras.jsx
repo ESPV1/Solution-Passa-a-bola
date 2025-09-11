@@ -1,7 +1,7 @@
 import React from "react";
 
 const escolinhas = [
-    { nome: "Escolinha Primavera", desc: "Aulas 2ª/4ª, futsal e society.", distancia: "1,2 km" },
+    { nome: "Escolinha Primavera", desc: "Aulas 2ª/4ª, futebol.", distancia: "1,2 km" },
     { nome: "Projeto Passa a Bola – Zona Leste", desc: "Categorias sub-11 ao adulto.", distancia: "3,4 km" },
     { nome: "Quadra Comunitária Vila Rosa", desc: "Treinos gratuitos sábados.", distancia: "4,1 km" },
     { nome: "Centro Esportivo Aurora", desc: "Avaliações mensais para novas jogadoras.", distancia: "6,0 km" },
@@ -12,13 +12,10 @@ export default function Quadras() {
     return (
         <main className="min-h-screen w-full bg-white text-slate-900">
             <section className="mx-auto w-full max-w-7xl px-6 py-8">
-               
                 <h1 className="text-2xl font-bold text-rose-600 mb-6">Quadras e Escolinhas</h1>
 
-      
-                <div className="grid grid-cols-[380px,1fr] gap-8">
-
-                    <aside className="bg-white rounded-2xl p-4 border border-rose-200 shadow-sm">
+                <div className="flex items-start gap-8">
+                    <aside className="shrink-0 w-[380px] bg-white rounded-2xl p-4 border border-rose-200 shadow-sm">
                         <input
                             type="text"
                             placeholder="Buscar escolinhas ou quadras…"
@@ -53,7 +50,7 @@ export default function Quadras() {
                         </ul>
                     </aside>
 
-                    <div className="relative rounded-2xl overflow-hidden border border-rose-200 shadow-sm">
+                    <div className="flex-1 relative rounded-2xl overflow-hidden border border-rose-200 shadow-sm">
                         <div className="w-full h-[560px] bg-slate-100" />
                         <div className="absolute top-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-rose-700 border border-rose-200">
                             Quadras próximas
