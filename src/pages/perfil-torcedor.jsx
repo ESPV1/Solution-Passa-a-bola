@@ -5,7 +5,7 @@ import { eventos } from "../constants/eventos";
 export default function PerfilTorcedor() {
     return (
         <main className="w-full min-h-screen flex items-center justify-center px-6 bg-white">
-            <section className="w-full max-w-6xl">
+            <section className="w-full max-w-7xl">
                 <div className="flex w-full items-start justify-between gap-8">
                     {/* Foto e dados do torcedor */}
                     <aside className="shrink-0 flex flex-col items-center text-center gap-3">
@@ -29,15 +29,15 @@ export default function PerfilTorcedor() {
                                 {eventos.map((ev) => (
                                     <article
                                         key={ev.titulo}
-                                        className="flex flex-col justify-between rounded-lg border border-rose-200 bg-white p-4"
+                                        className="flex gap-5 flex-col justify-between rounded-lg border border-rose-200 bg-white p-4"
                                     >
-                                        <div>
-                                            <h4 className="font-medium text-rose-700">{ev.titulo}</h4>
-                                            <p className="text-sm text-gray-600">{ev.desc}</p>
+                                        <div className="flex flex-col gap-5">
+                                            <h4 className="font-medium text-xl text-rose-700">{ev.titulo}</h4>
+                                            <p className="text-base text-gray-600">{ev.desc}</p>
                                         </div>
                                         <button
                                             type="button"
-                                            className="mt-4 px-3 py-2 text-sm rounded bg-rose-600 text-white hover:bg-rose-700"
+                                            className="px-3 py-2 text-sm rounded bg-rose-600 text-white duration-150 hover:cursor-pointer hover:bg-rose-700"
                                         >
                                             Cancelar
                                         </button>
