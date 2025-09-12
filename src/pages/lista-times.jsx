@@ -7,11 +7,10 @@ export default function Times() {
             <section className="mx-auto w-full max-w-7xl px-6 py-8">
                 <h1 className="text-2xl font-bold text-rose-600 mb-6">Lista de Times</h1>
 
-                {/* layout com a lista de times e o painel */}
-                <div className="grid grid-cols-[1fr,320px] gap-6 items-start">
-
+                {/* layout */}
+                <div className="grid grid-cols-4 gap-6 items-start">
                     {/* lista de times */}
-                    <div className="rounded-2xl border border-rose-200 p-6 bg-white shadow-sm">
+                    <div className="col-span-3 rounded-2xl border border-rose-200 p-6 bg-white shadow-sm">
                         <div className="grid grid-cols-3 gap-8">
                             {listaTimes.map((t) => (
                                 <div
@@ -35,7 +34,7 @@ export default function Times() {
                                         </p>
                                     </div>
 
-                                    {/* botão para ver mais sobre o time */}
+                                    {/* botão para ver mais informações sobre os times */}
                                     <button className="mt-2 rounded-lg bg-rose-500 text-white px-3 py-1.5 text-sm hover:bg-rose-600">
                                         Ver time
                                     </button>
@@ -43,9 +42,9 @@ export default function Times() {
                             ))}
                         </div>
                     </div>
-
-                    {/* painel de filtros */}
-                    <aside className="rounded-2xl border border-rose-200 bg-white p-4 shadow-sm">
+                    
+                    {/* filtros */}
+                    <aside className="col-span-1 rounded-2xl border border-rose-200 bg-white p-4 shadow-sm">
                         <div className="flex gap-3 mb-3">
                             <button className="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700">
                                 Jogadoras
