@@ -10,9 +10,9 @@ export default function Footer() {
                     <span>passaabola@dominio.com</span>
                 </div>
                 <div className="flex gap-2">
-                    <span className="hover:text-rose-200 transition"><FaInstagram size="2em"/></span>
-                    <span className="hover:text-rose-200 transition"><FaTwitter size="2em"/></span>
-                    <span className="hover:text-rose-200 transition"><FaYoutube size="2em"/></span>
+                    <span className="hover:text-rose-200 transition-colors duration-200 cursor-pointer"><FaInstagram size="2em"/></span>
+                    <span className="hover:text-rose-200 transition-colors duration-200 cursor-pointer"><FaTwitter size="2em"/></span>
+                    <span className="hover:text-rose-200 transition-colors duration-200 cursor-pointer"><FaYoutube size="2em"/></span>
                 </div>
             </section>
             <section className="flex flex-col gap-2 border-r-2">
@@ -21,7 +21,7 @@ export default function Footer() {
                     <ul className="flex flex-col gap-3">
                         <li>Sobre nós</li>
                         <li>Perguntas frequentes - FAQ</li>
-                        <li>Politica de Pirivacidade</li>
+                        <li>Política de Pirivacidade</li>
                     </ul>
                     <ul className="flex flex-col gap-3">
                         <li>Termos de uso</li>
