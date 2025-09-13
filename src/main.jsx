@@ -1,23 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-import './index.css'
-import { RootLayout } from './layout.jsx'
-import { Home, Login, PerfilTorcedor, Quadras, ListaTimes} from '@/pages'
+import "./index.css";
+import { AuthProvider } from "./context/auth-context.jsx";
+import { AppRoutes } from "./routes.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path="perfil-torcedor" element={<PerfilTorcedor />} />
-          <Route path="quadras" element={<Quadras />} />
-          <Route path="lista-times" element={<ListaTimes />} />
-        </Route>
-        <Route path='login' element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </AuthProvider>
   </StrictMode>
-)
+);
