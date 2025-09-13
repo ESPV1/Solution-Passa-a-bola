@@ -3,16 +3,16 @@ import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 export default function Footer() {
     return (
-        <footer className="grid grid-cols-3 px-8 py-8 bg-[#383838] text-white">
+        <footer className="grid grid-cols-3 px-8 py-8 bg-rose-500 text-white">
             <section className="flex flex-col gap-10 border-r-2">
                 <div>
                     <h2 className="text-2xl">Fale Conosco</h2>
                     <span>passaabola@dominio.com</span>
                 </div>
                 <div className="flex gap-2">
-                    <span><FaInstagram size="2em"/></span>
-                    <span><FaTwitter size="2em"/></span>
-                    <span><FaYoutube size="2em"/></span>
+                    <span className="hover:text-rose-200 transition"><FaInstagram size="2em"/></span>
+                    <span className="hover:text-rose-200 transition"><FaTwitter size="2em"/></span>
+                    <span className="hover:text-rose-200 transition"><FaYoutube size="2em"/></span>
                 </div>
             </section>
             <section className="flex flex-col gap-2 border-r-2">
