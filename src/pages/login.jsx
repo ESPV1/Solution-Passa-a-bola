@@ -7,8 +7,11 @@ import { loginSchema } from '../validation/schemas/login'
 import Form from '../components/login/login-form'
 import users from '../data/json/users.json';
 
+import { useNavigate } from 'react-router-dom'
+import { loginSession } from '@/utils/auth'
 
 export default function Login() {
+  const navigate = useNavigate()
 
   const {
     register,
@@ -24,9 +27,17 @@ export default function Login() {
 
     if (foundUser) {
       if (foundUser.password === data.password) {
-        console.log('Login successful!', foundUser);
-        alert(`Bem-vindo, ${foundUser.firstName} ${foundUser.lastName}!`);
-        // Aqui você pode redirecionar o usuário ou salvar no estado/localStorage
+
+        loginSession({
+          id: foundUser.id,
+          firstName: foundUser.firstName,
+          lastName: foundUser.lastName,
+          email: foundUser.email,
+          role: foundUser.type || 'user',
+        })
+        alert(`Bem-vindo, ${foundUser.firstName} ${foundUser.lastName}!`)
+        navigate('/') // altere para '/perfil-torcedor' se preferir
+
       } else {
         console.log('Senha incorreta');
         alert('Senha incorreta!');
