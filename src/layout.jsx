@@ -1,19 +1,17 @@
+import { Footer, Header } from './components/ui'
 import './rootlayout.css'
-import { Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 export function RootLayout() {
-  return(
+  return (
     <div>
       {/* isso aqui vai virar um componente header depois */}
-      <header>
-        <nav></nav>
-      </header>
+      <Header/>
 
       {/* aqui vai o conteúdo das páginas que tem header e footer */}
       <Outlet />
 
-      {/* isso aqui vai virar um componente footer depois */}
-      <footer></footer>
+      <Footer />
     </div>
   )
 }

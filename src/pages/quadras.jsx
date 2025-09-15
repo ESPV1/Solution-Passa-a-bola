@@ -1,5 +1,5 @@
 import React from "react";
-import { quadras } from "../constants/quadras";
+import { quadras } from "../data/json/quadras";
 
 export default function Quadras() {
     return (
@@ -36,13 +36,13 @@ export default function Quadras() {
 
                                         {/* descrição */}
                                         <p className="text-sm text-slate-600 mt-1">{e.desc}</p>
-                                        
+
                                         {/* botões */}
                                         <div className="mt-3 flex gap-2">
-                                            <button className="rounded-lg bg-rose-500 text-white px-3 py-1.5 text-sm hover:bg-rose-600">
+                                            <button className="rounded-lg bg-rose-500 text-white px-3 py-1.5 text-sm hover:bg-rose-600 transition-colors duration-200 cursor-pointer">
                                                 Ver no mapa
                                             </button>
-                                            <button className="rounded-lg border border-rose-300 text-rose-700 px-3 py-1.5 text-sm hover:bg-rose-50">
+                                            <button className="rounded-lg border border-rose-300 text-rose-700 px-3 py-1.5 text-sm hover:bg-rose-50 transition-colors duration-200 cursor-pointer">
                                                 Contato
                                             </button>
                                         </div>
@@ -66,9 +66,10 @@ export default function Quadras() {
                         ></iframe>
 
                         {/* etiqueta em cima do mapa */}
-                        <div className="absolute top-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-rose-700 border border-rose-200">
+                        <div className="absolute top-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-sm font-medium text-rose-700 border border-rose-200 transition-colors duration-200 cursor-pointer hover:bg-rose-50">
                             Quadras próximas
                         </div>
+
                     </div>
                 </div>
             </section>

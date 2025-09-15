@@ -1,8 +1,7 @@
 @import "tailwindcss";
-
-@theme {
-  --color-primary-pink: #E91E63;
-}
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@config "../tailwind.config.js";
 
 :root {
   font-family: 'Sofia Sans', Geist, sans-serif;
@@ -23,19 +22,94 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  overflow-x: hidden;
   min-width: 100vw;
   min-height: 100vh;
 }
 
-@media (prefers-color-scheme: light) {
+/* remove background do autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: #1F2937 !important;
+  background-color: transparent !important;
+}
+
+/* personaliza cor da seleção de texto */
+::selection {
+  background-color: var(--color-rose-500); /* rose-500 */
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--color-rose-500); /* rose-500 */
+  color: white;
+}
+
+/* Seleção específica para inputs */
+input::selection {
+  background-color: var(--color-rose-500); /* rose-500 */
+  color: white;
+}
+
+input::-moz-selection {
+  background-color: var(--color-rose-500); /* rose-500 */
+  color: white;
+}
+
+/* para modo escuro */
+/* @media (prefers-color-scheme: dark) {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1f2937 inset !important;
+    -webkit-text-fill-color: white !important;
+    background-color: transparent !important;
+  }
+} */
+
+/* para modo claro */
+/* @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: var(--color-gray-800);
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+} */
+
+/* ===== scrollbar para navegadores webkit (Chrome, Edge, Safari) ===== */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; /* slate-100 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f43f5e; /* rose-500 */
+  border-radius: 10px;
+  border: 1px solid #fff; /* slate-100 para criar espaçamento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e11d48; /* rose-600 */
+}
+
+/* remove setas dos botões da barra (cross-browser webkit) */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ===== scrollbar para firefox ===== */
+html {
+  scrollbar-width: thin; /* estreita */
+  scrollbar-color: #f43f5e #fff; /* thumb | track */
+  scroll-behavior: smooth;
 }
