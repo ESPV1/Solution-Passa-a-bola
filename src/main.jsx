@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 
 import './index.css'
 import { RootLayout } from './layout.jsx'
-import { Home, Login, PerfilTorcedor, Quadras, ListaTimes } from '@/pages'
+import { Home, Login, PerfilTorcedor, Quadras, ListaTimes, Register, UserTypeSelection } from '@/pages'
 import { isAuthenticated } from '@/utils/auth'
 
 // RequireAuth
@@ -25,6 +25,8 @@ createRoot(document.getElementById('root')).render(
           <Route path="lista-times" element={<ListaTimes />} />
         </Route>
         <Route path="login" element={<Login />} />
+        <Route path="user-type" element={<UserTypeSelection />} />
+        <Route path="register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
