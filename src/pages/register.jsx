@@ -1,13 +1,14 @@
-import React from 'react'
-import { useSearchParams, Link } from 'react-router-dom'
-import Form from '@/components/cadastro/register-form'
-import users from '../data/json/users.json'
-import fan from '@/assets/fan.png'
-import player from '@/assets/player.png'
+import React from 'react';
+import { useSearchParams, Link } from 'react-router-dom';
+import Form from '@/components/register/register-form';
+import users from '../data/json/users.json';
+import fan from '@/assets/fan.png';
+import player from '@/assets/player-register.jpg';
 
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { registerSchema } from '@/validation/schemas/register'
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { registerSchema } from '@/validation/schemas/register';
+import { UserTypeNotSelected } from '../components/register/usertype-not-selected';
 
 export default function Register() {
 
@@ -43,31 +44,10 @@ export default function Register() {
     console.log(users);
   };
 
-  // todo: precisa transformar isso em um componente à parte.
-  if (!isValidUserType) {
-    return (
-      <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-15">
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Tipo de usuário não selecionado
-          </h2>
-          <p className="text-gray-600">
-            Você precisa escolher se deseja ser um torcedor ou uma jogadora.
-          </p>
-          <Link
-            to="/user-type"
-            className="inline-block px-6 py-3 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition-colors"
-          >
-            Escolher tipo de usuário
-          </Link>
-        </div>
-      </div>
-    )
-  }
+  if (!isValidUserType) return <UserTypeNotSelected />
 
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-15">
-      {/* // todo: precisa colocar a imagem de jogadora (a que está é a mesma da de login) */}
       <div className="flex min-w-1/2">
         <img className='max-w-md' src={userType === 'fan' ? fan : player} alt="" />
       </div>
