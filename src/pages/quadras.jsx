@@ -1,5 +1,5 @@
 import React from "react";
-import { quadras } from "../constants/quadras";
+import { quadras } from "../data/json/quadras";
 
 export default function Quadras() {
     return (
