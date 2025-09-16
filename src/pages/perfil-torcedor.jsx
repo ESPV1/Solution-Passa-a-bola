@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fotoTorcedor from "../assets/foto-torcedor.png";
-import { eventos } from "../data/json/eventos";
+import eventos from "../data/json/eventos.json";
 
 export default function PerfilTorcedor() {
 
