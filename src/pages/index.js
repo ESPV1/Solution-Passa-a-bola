@@ -2,4 +2,6 @@ export { default as Login } from './login'
 export { default as Home } from './home'
 export { default as PerfilTorcedor } from './perfil-torcedor'
 export { default as Quadras } from './quadras';
-export { default as ListaTimes } from './lista-times'; 
+export { default as Register } from './register';
+export { default as ListaTimes } from './lista-times';
+export { default as UserTypeSelection } from './user-type-selection'; 
