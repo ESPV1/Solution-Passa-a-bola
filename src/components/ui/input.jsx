@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
-import { Eye, EyeClosed } from 'lucide-react';
-
+import { Eye, EyeClosed } from 'lucide-react'
+// todo: identar melhor esse código
 export default function Input({
   register,
   label,
@@ -10,45 +10,55 @@ export default function Input({
   errors,
   required,
   inputStyle,
-  containerStyle
+  containerStyle,
+  showPasswordToggle = false,
+  autoComplete
 }) {
-  const defaultInputClasses = "block px-2.5 pb-2.5 pt-4 mb-1 w-full text-sm text-gray-800 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-rose-500 focus:outline-none focus:ring-0 focus:border-rose-500 peer caret-rose-500 transition-colors duration-300 autofill:bg-transparent autofill:text-gray-800 selection:bg-rose-500 selection:text-white";
+  const defaultInputClasses = "block px-2.5 pb-2.5 pt-4 mb-1 w-full text-sm text-gray-800 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-rose-500 focus:outline-none focus:ring-0 focus:border-rose-500 peer caret-rose-500 transition-colors duration-300 autofill:bg-transparent autofill:text-gray-800 selection:bg-rose-500 selection:text-white"
 
   const [showPassword, setShowPassword] = useState(false);
-  const inputRef = useRef(null);
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prev) => !prev);
 
-    setTimeout(() => { inputRef.current?.focus() }, 0);
+    setTimeout(() => {
+      // pega o elemento 
+      const input = document.getElementById(`${name}-input`);
+
+      // verifica o tipo (setSelectionRange só usa alguns tipos)
+      if (input && (type === "password" || type === "text")) {
+        input.focus();
+        const length = input.value.length;
+        input.setSelectionRange(length, length);
+      }
+    }, 0);
   };
 
-  const handleFocus = (e) => {
-    const input = e.target;
-    const length = input.value.length;
-    setTimeout(() => { input.setSelectionRange(length, length) }, 0);
-  };
+  const isPassword = type === 'password'
+  const hasPasswordToggle = isPassword && showPasswordToggle
+  const inputType = hasPasswordToggle ? (showPassword ? 'text' : 'password') : (type ?? 'text')
 
   return (
     <div className={clsx("relative w-full mb-6", containerStyle)}>
       <input
         {...register(name)}
-        ref={inputRef}
         id={`${name}-input`}
-        type={type === 'password' ? (showPassword ? 'text' : 'password') : type}
+        type={inputType}
+        name={name}
         required={required}
         className={clsx(defaultInputClasses, inputStyle)}
         placeholder=" "
-        onFocus={handleFocus}
         style={{
-          WebkitBoxShadow: '0 0 0 1000px white inset',
-          WebkitTextFillColor: '#1f2937'
+          WebkitBoxShadow: "0 0 0 1000px white inset",
+          WebkitTextFillColor: "#1f2937",
         }}
       />
-      {type === 'password' && (
+
+      {hasPasswordToggle && (
         <button
-          type="button" onClick={togglePasswordVisibility}
-          className="absolute right-3 top-1/5 text-gray-500 transition-colors duration-200 focus:outline-none focus:text-rose-500"
+          type="button"
+          onClick={togglePasswordVisibility}
+          className="absolute right-3 top-1/5 text-gray-500"
           aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
         >
           {showPassword ? <EyeClosed className="hover:cursor-pointer" /> : <Eye className="hover:cursor-pointer" />}
@@ -61,5 +71,5 @@ export default function Input({
         {errors[name] ? errors[name].message : '\u00A0'}
       </p>
     </div>
-  )
+  );
 }
