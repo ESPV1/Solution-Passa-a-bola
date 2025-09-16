@@ -69,7 +69,7 @@ export default function PlayerList() {
                 Jogadoras
               </button>
               <Link to={"/team-list"} asChild>
-                <button className="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700">
+                <button className="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:cursor-pointer">
                   Times
                 </button>
               </Link>
