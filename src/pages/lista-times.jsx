@@ -1,5 +1,5 @@
 import React from "react";
-import { listaTimes } from "@/constants/times";
+import { listaTimes } from "@/data/json/times";
 
 export default function Times() {
     return (
@@ -35,7 +35,7 @@ export default function Times() {
                                     </div>
 
                                     {/* botão para ver mais informações sobre os times */}
-                                    <button className="mt-2 rounded-lg bg-rose-500 text-white px-3 py-1.5 text-sm hover:bg-rose-600">
+                                    <button className="mt-2 rounded-lg bg-rose-500 text-white px-3 py-1.5 text-sm hover:bg-rose-600 transition-colors duration-200 cursor-pointer">
                                         Ver time
                                     </button>
                                 </div>
@@ -61,14 +61,14 @@ export default function Times() {
                                 className="w-full rounded-xl border border-slate-200 px-3 py-2 outline-none focus:border-rose-500 focus:ring-2 focus:ring-rose-200"
                             />
 
-                            <select className="w-full rounded-xl border border-slate-200 px-3 py-2 outline-none bg-white focus:border-rose-500 focus:ring-2 focus:ring-rose-200">
+                            <select className="w-full rounded-xl border border-slate-200 px-3 py-2 outline-none bg-white focus:border-rose-500 focus:ring-2 focus:ring-rose-200 cursor-pointer">
                                 <option>Rank</option>
                                 <option>A</option>
                                 <option>B</option>
                                 <option>C</option>
                             </select>
 
-                            <select className="w-full rounded-xl border border-slate-200 px-3 py-2 outline-none bg-white focus:border-rose-500 focus:ring-2 focus:ring-rose-200">
+                            <select className="w-full rounded-xl border border-slate-200 px-3 py-2 outline-none bg-white focus:border-rose-500 focus:ring-2 focus:ring-rose-200 cursor-pointer">
                                 <option>Estado</option>
                                 <option>São Paulo</option>
                                 <option>Rio de Janeiro</option>
@@ -83,10 +83,10 @@ export default function Times() {
                             </select>
 
                             <div className="flex gap-2 pt-1">
-                                <button className="flex-1 rounded-lg bg-rose-500 text-white px-3 py-2 text-sm hover:bg-rose-600">
+                                <button className="flex-1 rounded-lg bg-rose-500 text-white px-3 py-2 text-sm hover:bg-rose-600 transition-colors duration-200 cursor-pointer">
                                     Aplicar filtros
                                 </button>
-                                <button className="rounded-lg border border-rose-300 text-rose-700 px-3 py-2 text-sm hover:bg-rose-50">
+                                <button className="rounded-lg border border-rose-300 text-rose-700 px-3 py-2 text-sm hover:bg-rose-50 transition-colors duration-200 cursor-pointer">
                                     Limpar
                                 </button>
                             </div>

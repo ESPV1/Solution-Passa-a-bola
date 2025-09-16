@@ -1,12 +1,12 @@
-import React from "react";
-import player from "@/assets/player.png";
+import React from 'react'
+import player from '@/assets/player.png'
 
-import { useLocation, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema } from "../validation/schemas/login";
-import Form from "../components/login/login-form";
-import { useAuth } from "../hooks/useAuth";
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { loginSchema } from '../validation/schemas/login'
+import Form from '../components/login/login-form'
+import users from '../data/json/users.json';
+
 
 export default function Login() {
   const { login, user } = useAuth();
