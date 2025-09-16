@@ -1,7 +1,31 @@
-import React from "react";
-import quadras from "../data/json/quadras.json";
+import React, { useState, useEffect } from "react";
+import { useData } from "../hooks/useData";
 
 export default function Quadras() {
+    const { getQuadras } = useData();
+    const [quadras, setQuadras] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filteredQuadras, setFilteredQuadras] = useState([]);
+
+    useEffect(() => {
+        const quadrasData = getQuadras();
+        setQuadras(quadrasData);
+        setFilteredQuadras(quadrasData);
+    }, [getQuadras]);
+
+    useEffect(() => {
+        if (searchTerm.trim() === "") {
+            setFilteredQuadras(quadras);
+        } else {
+            const filtered = quadras.filter(quadra =>
+                quadra.endereco?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                quadra.desc?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                quadra.bairro?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                quadra.localidade?.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setFilteredQuadras(filtered);
+        }
+    }, [searchTerm, quadras]);
     return (
         <main className="min-h-screen w-full bg-white text-slate-900">
             {/* conteúdo principal */}
@@ -15,40 +39,56 @@ export default function Quadras() {
                         <input
                             type="text"
                             placeholder="Buscar escolinhas ou quadras…"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full rounded-xl border border-slate-200 px-4 py-2 outline-none focus:border-rose-500 focus:ring-2 focus:ring-rose-200"
                         />
 
                         {/* lista de escolinhas e quadras */}
                         <ul className="mt-4 space-y-4">
-                            {quadras.map((e, i) => (
-                                <li
-                                    key={i}
-                                    className="rounded-xl border border-slate-200 hover:border-rose-300 transition-shadow shadow-sm hover:shadow-md"
-                                >
-                                    <div className="p-4">
-                                        {/* nome e distância */}
-                                        <h3 className="font-semibold text-slate-800">
-                                            <span className="inline-block rounded-md bg-rose-100 px-2 py-0.5 text-rose-700 mr-2 text-xs">
-                                                {e.distancia}
-                                            </span>
-                                            {e.nome}
-                                        </h3>
+                            {filteredQuadras.length > 0 ? (
+                                filteredQuadras.map((e, i) => (
+                                    <li
+                                        key={i}
+                                        className="rounded-xl border border-slate-200 hover:border-rose-300 transition-shadow shadow-sm hover:shadow-md"
+                                    >
+                                        <div className="p-4">
+                                            {/* nome e distância */}
+                                            <h3 className="font-semibold text-slate-800">
+                                                <span className="inline-block rounded-md bg-rose-100 px-2 py-0.5 text-rose-700 mr-2 text-xs">
+                                                    {e.distancia}
+                                                </span>
+                                                {e.endereco}
+                                            </h3>
 
-                                        {/* descrição */}
-                                        <p className="text-sm text-slate-600 mt-1">{e.desc}</p>
+                                            {/* descrição */}
+                                            <p className="text-sm text-slate-600 mt-1">{e.desc}</p>
 
-                                        {/* botões */}
-                                        <div className="mt-3 flex gap-2">
-                                            <button className="rounded-lg bg-rose-500 text-white px-3 py-1.5 text-sm hover:bg-rose-600 transition-colors duration-200 cursor-pointer">
-                                                Ver no mapa
-                                            </button>
-                                            <button className="rounded-lg border border-rose-300 text-rose-700 px-3 py-1.5 text-sm hover:bg-rose-50 transition-colors duration-200 cursor-pointer">
-                                                Contato
-                                            </button>
+                                            {/* informações do endereço */}
+                                            {e.bairro && e.localidade && (
+                                                <p className="text-xs text-slate-500 mt-1">
+                                                    {e.bairro} - {e.localidade} {e.cep && `- CEP: ${e.cep}`}
+                                                </p>
+                                            )}
+
+                                            {/* botões */}
+                                            <div className="mt-3 flex gap-2">
+                                                <button className="rounded-lg bg-rose-500 text-white px-3 py-1.5 text-sm hover:bg-rose-600 transition-colors duration-200 cursor-pointer">
+                                                    Ver no mapa
+                                                </button>
+                                                <button className="rounded-lg border border-rose-300 text-rose-700 px-3 py-1.5 text-sm hover:bg-rose-50 transition-colors duration-200 cursor-pointer">
+                                                    Contato
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </li>
+                                ))
+                            ) : (
+                                <li className="text-center py-8 text-slate-500">
+                                    <p>Nenhuma quadra encontrada para "{searchTerm}"</p>
+                                    <p className="text-sm mt-1">Tente buscar por outro termo</p>
                                 </li>
-                            ))}
+                            )}
                         </ul>
                     </aside>
 
