@@ -16,20 +16,23 @@ export default function Input({
 }) {
   const defaultInputClasses = "block px-2.5 pb-2.5 pt-4 mb-1 w-full text-sm text-gray-800 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-rose-500 focus:outline-none focus:ring-0 focus:border-rose-500 peer caret-rose-500 transition-colors duration-300 autofill:bg-transparent autofill:text-gray-800 selection:bg-rose-500 selection:text-white"
 
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
-    setShowPassword((s) => !s)
-    setTimeout(() => {
-      document.getElementById(`${name}-input`)?.focus()
-    }, 0)
-  }
+    setShowPassword((prev) => !prev);
 
-  const handleFocus = (e) => {
-    const input = e.target
-    const length = input.value.length
-    setTimeout(() => { input.setSelectionRange(length, length) }, 0)
-  }
+    setTimeout(() => {
+      // pega o elemento 
+      const input = document.getElementById(`${name}-input`);
+
+      // verifica o tipo (setSelectionRange só usa alguns tipos)
+      if (input && (type === "password" || type === "text")) {
+        input.focus();
+        const length = input.value.length;
+        input.setSelectionRange(length, length);
+      }
+    }, 0);
+  };
 
   const isPassword = type === 'password'
   const hasPasswordToggle = isPassword && showPasswordToggle
@@ -38,18 +41,16 @@ export default function Input({
   return (
     <div className={clsx("relative w-full mb-6", containerStyle)}>
       <input
-        {...register(name, { required: !!required })}
+        {...register(name)}
         id={`${name}-input`}
-        name={name}
         type={inputType}
+        name={name}
         required={required}
         className={clsx(defaultInputClasses, inputStyle)}
         placeholder=" "
-        onFocus={handleFocus}
-        autoComplete={autoComplete || (isPassword ? 'current-password' : 'off')}
         style={{
-          WebkitBoxShadow: '0 0 0 1000px white inset',
-          WebkitTextFillColor: '#1f2937'
+          WebkitBoxShadow: "0 0 0 1000px white inset",
+          WebkitTextFillColor: "#1f2937",
         }}
       />
 
@@ -63,16 +64,12 @@ export default function Input({
           {showPassword ? <EyeClosed className="hover:cursor-pointer" /> : <Eye className="hover:cursor-pointer" />}
         </button>
       )}
-
-      <label
-        htmlFor={`${name}-input`}
-        className="absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-rose-500 peer-focus:dark:text-rose-500 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-5 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-6 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:-translate-y-5 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 hover:cursor-text"
-      >
+      <label htmlFor={`${name}-input`} className="absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-rose-500 peer-focus:dark:text-rose-500 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-5 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-6 peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:-translate-y-5 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 hover:cursor-text">
         {label}
       </label>
       <p className="text-sm pl-1 text-red-600">
-        {errors?.[name]?.message ?? '\u00A0'}
+        {errors[name] ? errors[name].message : '\u00A0'}
       </p>
     </div>
-  )
+  );
 }

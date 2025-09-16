@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import fotoTorcedor from "../assets/foto-torcedor.png";
-import { eventos } from "../constants/eventos";
+import { eventos } from "../data/json/eventos";
 
 export default function PerfilTorcedor() {
+
+    const [fan, setFan] = useState();
+
+    useEffect(()=>{
+        const userString = localStorage.getItem("user");
+        if(userString){
+            const user = JSON.parse(userString)
+            setFan(user)
+        }
+    }, [])
+
     return (
         <main className="w-full min-h-screen flex items-center justify-center px-6 bg-white">
             <section className="w-full max-w-7xl">
@@ -15,8 +26,8 @@ export default function PerfilTorcedor() {
                             className="w-56 h-56 rounded-full object-cover bg-rose-50 border border-rose-200"
                         />
                         <div>
-                            <h2 className="text-xl font-semibold text-rose-600">Edoardo Pari</h2>
-                            <p className="text-gray-600 text-sm">edo.pari@fiap.com.br</p>
+                            <h2 className="text-xl font-semibold text-rose-600">{fan?.firstName}</h2>
+                            <p className="text-gray-600 text-sm">{fan?.email}</p>
                         </div>
                     </aside>
 
