@@ -1,5 +1,5 @@
 import React from "react";
-import { listaTimes } from "@/data/json/times";
+import listaTimes from "../data/json/times.json";
 
 export default function Times() {
     return (

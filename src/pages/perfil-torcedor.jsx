@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import defaultAvatar from "../assets/default-avatar.webp";
-import { eventos } from "../data/json/eventos";
 import { useAuth } from "../hooks/useAuth";
+import eventos from "../data/json/eventos.json";
 
 export default function PerfilTorcedor() {
 
