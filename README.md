@@ -12,7 +12,8 @@ O projeto visa o desenvolvimento de uma plataforma web exclusiva para promover, 
 - Mapa
 
 ## 👀Como acessar o Projeto
-Para que o projeto seja acessado, use o link para o Github Pages(aqui) ou clone o repositorio e rode o comando npm install.
+Para que o projeto seja acessado, use o link para o Github Pages [Aqui](https://espv1.github.io/Solution-Passa-a-bola/), veja o projeto no Vercel [Aqui](https://solution-passa-a-bola.vercel.app/) ou clone o repositorio e rode o comando npm install.
+**Para acessar as paginas dentro do projeto vá para Cadastro, e clique em cadastrar com as informações que já estão nos inputs para liberar as outras paginas**
 
 ## 🧰Tecnologias Utilizadas
 - Linguagem de marcação: HTML5
