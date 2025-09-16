@@ -7,7 +7,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { getUsers, deleteUser } = useData();
+  const { getUsers, deleteUser, isInitialized } = useData();
 
   // gera um token de sessão único
   const generateSessionToken = () => {
@@ -43,11 +43,16 @@ export function AuthProvider({ children }) {
   };
 
   useEffect(() => {
+    // Aguarda a inicialização do DataProvider
+    if (!isInitialized) {
+      return;
+    }
+
     const s = getSession();
     if (s) setUser(s.user);
 
     setIsLoading(false);
-  }, []);
+  }, [isInitialized]);
 
   const createSession = (user) => {
     const token = generateSessionToken();
