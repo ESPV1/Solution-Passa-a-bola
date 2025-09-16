@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema } from '../validation/schemas/login'
 import Form from '../components/login/login-form'
-import users from '../data/json/users.json';
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
 
 
 export default function Login() {
@@ -13,11 +14,7 @@ export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "carlos.santos@email.com",
@@ -29,10 +26,7 @@ export default function Login() {
 
   const onSubmit = (data) => {
     const res = login(data);
-    if (res.success) {
-      navigate(from, { replace: true });
-    }
-    // find retorna o usuário que tem o email igual ao enviado ou undefined se não achar
+    if (res.success) navigate(from, { replace: true });
   };
 
   return (
