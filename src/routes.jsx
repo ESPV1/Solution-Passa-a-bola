@@ -4,8 +4,10 @@ import {
   Login,
   Register,
   PerfilTorcedor,
+  PerfilJogadora,
   Quadras,
   ListaTimes,
+  PlayerList,
   UserTypeSelection
 } from "@/pages";
 import { ProtectedRoute } from "./components/protected-route.jsx";
@@ -25,8 +27,10 @@ export function AppRoutes() {
           }
         >
           <Route path="fan-profile" element={<PerfilTorcedor />} />
+          <Route path="player-profile" element={<PerfilJogadora />} />
           <Route path="courts" element={<Quadras />} />
           <Route path="team-list" element={<ListaTimes />} />
+          <Route path="player-list" element={<PlayerList />} />
         </Route>
       </Route>
       <Route path="login" element={<Login />} />

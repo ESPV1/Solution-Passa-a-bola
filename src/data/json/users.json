@@ -8,7 +8,15 @@
     "gender": "male",
     "email": "john.smith@email.com",
     "password": "password123",
-    "type": "player"
+    "type": "player",
+    "profileURL": "https://example.com/john-photo.jpg",
+    "posicao": "Meio-campo",
+    "time": "Corinthians",
+    "nacionalidade": "Brasil",
+    "altura": "178cm",
+    "pePreferido": "Direito",
+    "numeroCamisa": 8,
+    "idade": 39
   },
   {
     "id": 2,
@@ -19,7 +27,15 @@
     "gender": "female",
     "email": "emily.johnson@email.com",
     "password": "securePass456",
-    "type": "player"
+    "type": "player",
+    "profileURL": "https://example.com/emily-photo.jpg",
+    "posicao": "Atacante",
+    "time": "Corinthians",
+    "nacionalidade": "Brasil",
+    "altura": "162cm",
+    "pePreferido": "Esquerdo",
+    "numeroCamisa": 10,
+    "idade": 35
   },
   {
     "id": 3,
@@ -43,5 +59,43 @@
     "email": "maria.silva@email.com",
     "password": "supporterPass321",
     "type": "fan"
+  },
+  {
+    "id": 5,
+    "name": "Marta",
+    "surname": "Vieira",
+    "cpf": "111.222.333-05",
+    "birthdate": "1986-02-19",
+    "gender": "female",
+    "email": "marta.vieira@email.com",
+    "password": "playerPass123",
+    "type": "player",
+    "profileURL": "https://example.com/marta-photo.jpg",
+    "posicao": "Atacante",
+    "time": "Corinthians",
+    "nacionalidade": "Brasil",
+    "altura": "162cm",
+    "pePreferido": "Esquerdo",
+    "numeroCamisa": 10,
+    "idade": 39
+  },
+  {
+    "id": 6,
+    "name": "Cristiane",
+    "surname": "Rozeira",
+    "cpf": "222.333.444-06",
+    "birthdate": "1985-05-15",
+    "gender": "female",
+    "email": "cristiane.rozeira@email.com",
+    "password": "playerPass456",
+    "type": "player",
+    "profileURL": "https://example.com/cristiane-photo.jpg",
+    "posicao": "Atacante",
+    "time": "Corinthians",
+    "nacionalidade": "Brasil",
+    "altura": "165cm",
+    "pePreferido": "Direito",
+    "numeroCamisa": 9,
+    "idade": 39
   }
 ]

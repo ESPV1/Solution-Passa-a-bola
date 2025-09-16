@@ -61,7 +61,7 @@ export default function UserDropdown() {
                 className="flex items-center gap-3 hover:bg-rose-600 p-2 rounded-lg transition-colors duration-200"
             >
                 <img
-                    src={user?.profileURL || defaultAvatar}
+                    src={defaultAvatar}
                     alt={`Foto de perfil de ${user?.name}`}
                     className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md"
                 />
