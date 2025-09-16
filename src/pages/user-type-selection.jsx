@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import fotoTorcedor from '../assets/fan.png'
+import playerImage from '../assets/player-register.jpg'
 
 export default function UserTypeSelection() {
+  const [hoveredType, setHoveredType] = useState(null)
+
+  const getDisplayImage = () => {
+    if (hoveredType === 'fan') return fotoTorcedor
+    if (hoveredType === 'player') return playerImage
+    return null // imagem padrão quando não há hover
+  }
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-15 bg-gray-50">
-      <div className="max-w-4xl w-full flex items-center">
+      <div className="max-w-6xl w-full flex items-center">
         {/* // todo: colocar o hover de mudar as imagens dependendo do botão  */}
         {/* lado esquerdo - imagem/placeholder */}
-        <div className="w-1/2 pr-8">
-          <div className="bg-gray-300 aspect-square rounded-lg flex items-center justify-center">
-            <div className="text-gray-500 text-xl">Imagem do futebol</div>
+        <div className="w-2/4 mr-8 flex justify-center">
+          <div className="bg-gray-300 w-3/5 h-130 rounded-lg flex items-center justify-center overflow-hidden relative">
+            {getDisplayImage() ? (
+              <img 
+                src={getDisplayImage()} 
+                alt={hoveredType === 'fan' ? 'Torcedor' : 'Jogadora'}
+                className="w-full h-full object-fill transition-opacity duration-300"
+              />
+            ) : (
+              <div className="text-gray-500 text-xl">Selecione uma opção</div>
+            )}
           </div>
         </div>
 
@@ -29,6 +46,8 @@ export default function UserTypeSelection() {
             <Link
               to="/register?type=fan"
               className="block w-full"
+              onMouseEnter={() => setHoveredType('fan')}
+              onMouseLeave={() => setHoveredType(null)}
             >
               <button className="w-full py-4 px-8 bg-rose-500 hover:bg-rose-600 text-white text-xl font-bold rounded-lg transition-colors duration-200 hover:cursor-pointer">
                 QUERO SER UM TORCEDOR
@@ -39,6 +58,8 @@ export default function UserTypeSelection() {
             <Link
               to="/register?type=player"
               className="block w-full"
+              onMouseEnter={() => setHoveredType('player')}
+              onMouseLeave={() => setHoveredType(null)}
             >
               <button className="w-full py-4 px-8 bg-rose-500 hover:bg-rose-600 text-white text-xl font-bold rounded-lg transition-colors duration-200 hover:cursor-pointer">
                 QUERO SER UMA JOGADORA
