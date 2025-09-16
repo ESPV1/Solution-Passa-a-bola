@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "nome": "Leonas FC",
+        "rank": "A",
+        "estado": "São Paulo",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 2,
+        "nome": "Aurora United",
+        "rank": "B",
+        "estado": "Rio de Janeiro",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 3,
+        "nome": "Estrelas do Sul",
+        "rank": "A",
+        "estado": "Minas Gerais",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 4,
+        "nome": "Bravas Paulista",
+        "rank": "C",
+        "estado": "São Paulo",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 5,
+        "nome": "Fênix Girls",
+        "rank": "B",
+        "estado": "Bahia",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 6,
+        "nome": "Norte Forte",
+        "rank": "A",
+        "estado": "Amazonas",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 7,
+        "nome": "Atléticas Rosa",
+        "rank": "B",
+        "estado": "Pernambuco",
+        "logo": "scr/assets/escudo-time.png"
+    },
+    {
+        "id": 8,
+        "nome": "Vila FC",
+        "rank": "C",
+        "estado": "Paraná",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 9,
+        "nome": "Panteras",
+        "rank": "A",
+        "estado": "Rio Grande do Sul",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 10,
+        "nome": "Laguna",
+        "rank": "B",
+        "estado": "Santa Catarina",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 11,
+        "nome": "Oeste Clube",
+        "rank": "C",
+        "estado": "Mato Grosso",
+        "logo": "src/assets/escudo-time.png"
+    },
+    {
+        "id": 12,
+        "nome": "Amazonas Queens",
+        "rank": "A",
+        "estado": "Amazonas",
+        "logo": "src/assets/escudo-time.png"
+    }
+]
