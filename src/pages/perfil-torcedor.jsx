@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
-import fotoTorcedor from "../assets/foto-torcedor.png";
+import defaultAvatar from "../assets/default-avatar.webp";
 import { eventos } from "../data/json/eventos";
+import { useAuth } from "../hooks/useAuth";
 
 export default function PerfilTorcedor() {
 
-    const [fan, setFan] = useState();
-
-    useEffect(()=>{
-        const userString = localStorage.getItem("user");
-        if(userString){
-            const user = JSON.parse(userString)
-            setFan(user)
-        }
-    }, [])
+    const { user } = useAuth();
 
     return (
         <main className="w-full min-h-screen flex items-center justify-center px-6 bg-white">
@@ -21,13 +14,13 @@ export default function PerfilTorcedor() {
                     {/* Foto e dados do torcedor */}
                     <aside className="shrink-0 flex flex-col items-center text-center gap-3">
                         <img
-                            src={fotoTorcedor}
+                            src={ user?.profileURL || defaultAvatar }
                             alt="Foto do torcedor"
                             className="w-56 h-56 rounded-full object-cover bg-rose-50 border border-rose-200"
                         />
                         <div>
-                            <h2 className="text-xl font-semibold text-rose-600">{fan?.firstName}</h2>
-                            <p className="text-gray-600 text-sm">{fan?.email}</p>
+                            <h2 className="text-xl font-semibold text-rose-600">{user?.name + ' ' + user?.surname}</h2>
+                            <p className="text-gray-600 text-sm">{user?.email}</p>
                         </div>
                     </aside>
 

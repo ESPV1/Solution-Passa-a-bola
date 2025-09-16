@@ -24,7 +24,7 @@ export function AppRoutes() {
             </ProtectedRoute>
           }
         >
-          <Route path="perfil-torcedor" element={<PerfilTorcedor />} />
+          <Route path="fan-profile" element={<PerfilTorcedor />} />
           <Route path="courts" element={<Quadras />} />
           <Route path="team-list" element={<ListaTimes />} />
         </Route>

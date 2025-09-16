@@ -2,7 +2,7 @@ import { z } from "zod";
 import { validateCPF } from "@/utils/validateCPF";
 
 // todo: revisar as validações
-export const registerSchema = z.object({
+export const createRegisterSchema = (userType) => z.object({
   name: z
     .string()
     .min(2, "O nome deve ter pelo menos 2 caracteres")
@@ -40,10 +40,13 @@ export const registerSchema = z.object({
       message: "Idade deve estar entre 13 e 120 anos"
     }),
 
-  gender: z
-    .enum(["male", "female", "other"], {
-      errorMap: () => ({ message: "Selecione um gênero válido" })
-    }),
+  gender: userType === 'player' 
+    ? z.literal("female", {
+        errorMap: () => ({ message: "Jogadoras devem selecionar o gênero feminino" })
+      })
+    : z.enum(["male", "female", "other"], {
+        errorMap: () => ({ message: "Selecione um gênero válido" })
+      }),
 
   email: z
     .email("Email inválido")
@@ -63,3 +66,6 @@ export const registerSchema = z.object({
   message: "As senhas não coincidem",
   path: ["confirmPassword"]
 });
+
+// Mantém compatibilidade com código existente
+export const registerSchema = createRegisterSchema();
