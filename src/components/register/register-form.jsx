@@ -11,10 +11,18 @@ export default function RegisterForm({
   handleSubmit,
   errors,
   onSubmit,
-  className
+  className,
+  isSubmitting = false,
+  submitError = '',
+  userType
 }) {
   const [acceptPrivacy, setAcceptPrivacy] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(false);
+
+  // Filtrar opções de gênero baseado no tipo de usuário
+  const availableGenderOptions = userType === 'player' 
+    ? genderOptions.filter(option => option.value === 'female')
+    : genderOptions;
 
   const allConditionsAccedpted = acceptPrivacy && acceptTerms;
   return (
@@ -33,7 +41,7 @@ export default function RegisterForm({
         <GenderSelect
           register={register}
           errors={errors}
-          options={genderOptions}
+          options={availableGenderOptions}
         />
 
         <Input
@@ -66,9 +74,15 @@ export default function RegisterForm({
         setAcceptTerms={setAcceptTerms}
       />
 
+      {submitError && (
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded text-sm">
+          {submitError}
+        </div>
+      )}
+
       <SubmitButton
-        isEnabled={allConditionsAccedpted}
-        text="Criar Conta"
+        isEnabled={allConditionsAccedpted && !isSubmitting}
+        text={isSubmitting ? "Criando conta..." : "Criar Conta"}
       />
 
       <div className="flex text-sm gap-1 justify-center">
