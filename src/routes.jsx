@@ -1,5 +1,13 @@
 import { RootLayout } from "./private-layout.jsx";
-import { Home, Login, PerfilTorcedor, Quadras, ListaTimes } from "@/pages";
+import { 
+  Home,
+  Login,
+  Register,
+  PerfilTorcedor,
+  Quadras,
+  ListaTimes,
+  UserTypeSelection
+} from "@/pages";
 import { ProtectedRoute } from "./components/protected-route.jsx";
 import { Route, Routes } from "react-router-dom";
 import { PublicLayout } from "./public-layout.jsx";
@@ -17,11 +25,13 @@ export function AppRoutes() {
           }
         >
           <Route path="perfil-torcedor" element={<PerfilTorcedor />} />
-          <Route path="quadras" element={<Quadras />} />
-          <Route path="lista-times" element={<ListaTimes />} />
+          <Route path="courts" element={<Quadras />} />
+          <Route path="team-list" element={<ListaTimes />} />
         </Route>
       </Route>
       <Route path="login" element={<Login />} />
+      <Route path="user-type" element={<UserTypeSelection />} />
+      <Route path="register" element={<Register />} />
       {/* Rotas protegidas */}
     </Routes>
   );
