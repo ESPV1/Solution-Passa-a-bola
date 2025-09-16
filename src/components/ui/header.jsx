@@ -6,14 +6,30 @@ export default function Header() {
             <h2 className="text-4xl">Passa a bola</h2>
             <nav className="flex items-center justify-around">
                 <ul className="flex gap-6 text-lg">
-                    <li className="hover:text-rose-200 transition-colors duration-200 cursor-pointer">Home</li>
-                    <li className="hover:text-rose-200 transition-colors duration-200 cursor-pointer">Jogadoras</li>
-                    <li className="hover:text-rose-200 transition-colors duration-200 cursor-pointer">Times</li>
-                    <li className="hover:text-rose-200 transition-colors duration-200 cursor-pointer">Quadras</li>
+                    <li>
+                        <Link to="/" className="hover:text-rose-200 transition-colors duration-200">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/player-list" className="hover:text-rose-200 transition-colors duration-200">
+                            Jogadoras
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/team-list" className="hover:text-rose-200 transition-colors duration-200">
+                            Times
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/courts" className="hover:text-rose-200 transition-colors duration-200">
+                            Quadras
+                        </Link>
+                    </li>
                 </ul>
                 <ul className="flex gap-6">
                     <li>
-                        <Link 
+                        <Link
                             to="/login"
                             className="inline-block px-12 py-2 bg-white text-rose-500 rounded-md hover:bg-rose-100 transition-colors duration-200"
                         >
@@ -21,7 +37,7 @@ export default function Header() {
                         </Link>
                     </li>
                     <li>
-                        <Link 
+                        <Link
                             to="/user-type"
                             className="inline-block px-8 py-2 bg-rose-700 rounded-md hover:bg-rose-800 transition-colors duration-200"
                         >

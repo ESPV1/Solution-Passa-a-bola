@@ -16,23 +16,17 @@ export default function Home() {
         {/* propaganda esquerda */}
         {adsData
           .filter((_, i) => i % 2 === 0)
-          .map((ad, index) => (
-            <AdCard key={index} data={ad} position="left" />
-          ))}
+          .map((ad, index) => (<AdCard key={index} data={ad} position="left" />))}
 
         {/* cards */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cardsData.map((card, index) => (
-            <Card key={index} data={card} />
-          ))}
+          {cardsData.map((card, index) => (<Card key={index} data={card} />))}
         </div>
 
         {/* propaganda direita */}
         {adsData
           .filter((_, i) => i % 2 !== 0)
-          .map((ad, index) => (
-            <AdCard key={index} data={ad} position="right" />
-          ))}
+          .map((ad, index) => (<AdCard key={index} data={ad} position="right" />))}
       </section>
     </main>
   );

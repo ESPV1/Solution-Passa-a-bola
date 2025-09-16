@@ -1,28 +1,34 @@
 import React from 'react';
+// roteamento
 import { useSearchParams, Link } from 'react-router-dom';
-import Form from '@/components/register/register-form';
-import users from '../data/json/users.json';
-import fan from '@/assets/fan.png';
-import player from '@/assets/player-register.jpg';
 
+// para usar no formulário
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema } from '@/validation/schemas/register';
+
+// formulário
+import Form from '@/components/register/register-form';
+
+// página para caso o tipo de usuário não seja selecionado ou seja inválido
 import { UserTypeNotSelected } from '../components/register/usertype-not-selected';
+
+// imagens 
+import fan from '@/assets/fan.png';
+import player from '@/assets/player-register.jpg';
 
 export default function Register() {
 
+  // pega os parâmetros da URL
   const [searchParams] = useSearchParams()
+  // pega o valor do parâmetro type
   const userType = searchParams.get('type')
-
+  // array com os tipos de usuário válidos
   const validUserTypes = ['fan', 'player']
+  // verifica se o tipo da URL está no array de tipos válidos
   const isValidUserType = userType && validUserTypes.includes(userType)
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(registerSchema),
     defaultValues: {
       name: 'Pedro Lucas',
@@ -38,10 +44,7 @@ export default function Register() {
 
   const onSubmit = (data) => {
     const userData = { ...data, type: userType }
-    delete userData.confirmPassword
-    users.push({ id: users.length + 1, ...userData })
     // todo: precisa implementar isso de acordo com a lógica de armazenamento.
-    console.log(users);
   };
 
   if (!isValidUserType) return <UserTypeNotSelected />
@@ -61,10 +64,10 @@ export default function Register() {
           </p>
           <div className="mt-2 text-center">
             <Link
-              to="/user-type"
+              to={`/register?type=${userType === 'fan' ? 'player' : 'fan'}`}
               className="text-sm text-rose-500 underline hover:no-underline"
             >
-              Alterar tipo de usuário
+              Fazer cadastro como {userType === 'fan' ? 'Jogadora' : 'Torcedor'}
             </Link>
           </div>
         </div>
