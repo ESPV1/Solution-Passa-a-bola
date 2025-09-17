@@ -9,7 +9,9 @@ export default function Home() {
   return (
     <main className="w-full min-h-screen bg-white text-gray-800 flex flex-col">
       {/* passo a passo */}
-      <StepByStep />
+      <div className="hidden md:block">
+        <StepByStep />
+      </div>
 
       {/* conteúdo principal */}
       <section className="flex-1 w-full max-w-7xl mx-auto flex gap-6 px-6 py-8">
