@@ -28,6 +28,7 @@ export function AppRoutes() {
         >
           <Route path="fan-profile" element={<PerfilTorcedor />} />
           <Route path="player-profile" element={<PerfilJogadora />} />
+          <Route path="perfil-jogadora/:id" element={<PerfilJogadora />} />
           <Route path="courts" element={<Quadras />} />
           <Route path="team-list" element={<ListaTimes />} />
           <Route path="player-list" element={<PlayerList />} />
