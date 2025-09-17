@@ -1,5 +1,5 @@
 import React from "react";
-import listaPlayers from "../data/json/players.json";
+import users from "../data/json/users.json";
 import { Link } from "react-router-dom";
 
 export default function PlayerList() {
@@ -86,7 +86,7 @@ export default function PlayerList() {
           {/* lista de jogadoras */}
           <div className="order-2 lg:order-1 col-span-3 rounded-2xl border border-rose-200 p-6 bg-white shadow-sm">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {listaPlayers.map((player) => (
+              {users.filter(user => user.type === "player").map((player) => (
                 <div
                   key={player.id}
                   className="flex flex-col items-center justify-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 p-6"
@@ -94,8 +94,8 @@ export default function PlayerList() {
                   {/* foto da jogadora */}
                   <div className="w-40 h-40 rounded-full bg-rose-100 flex items-center justify-center overflow-hidden">
                     <img
-                      src={player.foto}
-                      alt={`Foto de ${player.nome}`}
+                      src={"src/assets/default-avatar.webp"}
+                      alt={`Foto de ${player.name} ${player.surname}`}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -103,7 +103,7 @@ export default function PlayerList() {
                   {/* informações da jogadora */}
                   <div className="text-center">
                     <p className="font-semibold text-slate-800 text-lg">
-                      {player.nome}
+                      {player.name} {player.surname}
                     </p>
                     <p className="text-sm text-rose-600 font-medium">
                       {player.posicao}
@@ -120,24 +120,27 @@ export default function PlayerList() {
                   <div className="flex justify-center gap-4 text-xs text-slate-600 bg-white rounded-lg p-2 w-full">
                     <div className="text-center">
                       <p className="font-semibold text-rose-600">
-                        {player.rating}
+                        {player.rating || "N/A"}
                       </p>
                       <p>Rating</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-semibold">{player.gols}</p>
+                      <p className="font-semibold">{player.gols || "0"}</p>
                       <p>Gols</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-semibold">{player.assistencias}</p>
+                      <p className="font-semibold">{player.assistencias || "0"}</p>
                       <p>Assist.</p>
                     </div>
                   </div>
 
                   {/* botão ver perfil */}
-                  <button className="mt-2 rounded-lg bg-rose-500 text-white px-4 py-2 text-sm hover:bg-rose-600 transition-colors duration-200 cursor-pointer w-full">
+                  <Link
+                    to={`/perfil-jogadora/${player.id}`}
+                    className="mt-2 rounded-lg bg-rose-500 text-white px-4 py-2 text-sm hover:bg-rose-600 transition-colors duration-200 cursor-pointer w-full text-center block"
+                  >
                     Ver perfil
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import defaultAvatar from "../assets/default-avatar.webp";
 import { useAuth } from "../hooks/useAuth";
 import { useData } from "../hooks/useData";
 import eventos from "../data/json/eventos.json";
 
 export default function PerfilJogadora() {
+  const { id } = useParams();
   const { user } = useAuth();
   const { getUsers } = useData();
   const [playerData, setPlayerData] = useState(null);
@@ -20,10 +22,18 @@ export default function PerfilJogadora() {
   useEffect(() => {
     const users = getUsers();
     const playerUsers = users?.filter(u => u.type === "player") || [];
-    const currentPlayer =
-      playerUsers.find(p => p.email === user?.email) || playerUsers[0];
+    
+    let currentPlayer;
+    if (id) {
+      // Se há um ID na URL, busca o jogador específico
+      currentPlayer = playerUsers.find(p => p.id === parseInt(id));
+    } else {
+      // Caso contrário, usa o jogador logado ou o primeiro da lista
+      currentPlayer = playerUsers.find(p => p.email === user?.email) || playerUsers[0];
+    }
+    
     setPlayerData(currentPlayer);
-  }, [getUsers, user]);
+  }, [getUsers, user, id]);
 
   if (!playerData) {
     return (
@@ -147,7 +157,7 @@ export default function PerfilJogadora() {
                 {eventos.slice(0, 3).map((evento, index) => (
                   <div
                     key={index}
-                    className="border border-gray-200 rounded-lg p-4 h-28 md:h-32 bg-gray-50"
+                    className="border border-gray-200 rounded-lg p-4 h-40 md:h-48 bg-gray-50"
                   >
                     <h4 className="font-semibold text-sm md:text-base text-gray-800 mb-2 line-clamp-2">
                       {evento.titulo}
