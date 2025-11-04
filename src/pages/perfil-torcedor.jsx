@@ -24,13 +24,14 @@ export default function PerfilTorcedor() {
               </h2>
               <p className="text-gray-600 text-sm md:text-base">{user?.email}</p>
             </div>
+            
           </aside>
 
           {/* Inscrições */}
           <section className="flex-1 w-full">
             <div className="w-full bg-rose-50 rounded-lg p-4 md:p-6 border border-rose-200">
-              <h3 className="text-base md:text-lg text-rose-700 font-semibold">
-                I N S C R I Ç Õ E S
+              <h3 className="text-base md:text-lg text-rose-700 font-semibold tracking-widest">
+                INSCRIÇÕES
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
