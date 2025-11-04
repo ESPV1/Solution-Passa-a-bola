@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../components/ui/card";
+import PersonalizedCard from "../components/ui/personalized-card";
 import AdCard from "../components/ui/adCard";
 import cardsData from "../data/json/cardsData.json";
 import adsData from "../data/json/adsData.json";
@@ -22,7 +22,7 @@ export default function Home() {
 
         {/* cards */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cardsData.map((card, index) => (<Card key={index} data={card} />))}
+          {cardsData.map((card, index) => (<PersonalizedCard key={index} data={card} />))}
         </div>
 
         {/* propaganda direita */}

@@ -1,19 +1,101 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import * as React from "react"
 
-export default function Card({ data }) {
-  const { image, title, description, url, type } = data;
+import { cn } from "@/lib/utils"
 
+function Card({
+  className,
+  ...props
+}) {
   return (
-    <Link
-      to={url}
-      className="relative bg-white rounded-lg overflow-hidden border border-rose-200 transform transition duration-300 hover:scale-105 hover:brightness-90 shadow-lg cursor-pointer"
-    >
-      <img src={image} alt={title} className="w-full h-full object-cover" />
-      <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-rose-900/80 to-transparent text-white">
-        <h2 className="font-bold text-lg">{title}</h2>
-        <p className="text-sm">{description}</p>
-      </div>
-    </Link>
+    <div
+      data-slot="card"
+      className={cn(
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        className
+      )}
+      {...props} />
   );
+}
+
+function CardHeader({
+  className,
+  ...props
+}) {
+  return (
+    <div
+      data-slot="card-header"
+      className={cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className
+      )}
+      {...props} />
+  );
+}
+
+function CardTitle({
+  className,
+  ...props
+}) {
+  return (
+    <div
+      data-slot="card-title"
+      className={cn("leading-none font-semibold", className)}
+      {...props} />
+  );
+}
+
+function CardDescription({
+  className,
+  ...props
+}) {
+  return (
+    <div
+      data-slot="card-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props} />
+  );
+}
+
+function CardAction({
+  className,
+  ...props
+}) {
+  return (
+    <div
+      data-slot="card-action"
+      className={cn(
+        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+        className
+      )}
+      {...props} />
+  );
+}
+
+function CardContent({
+  className,
+  ...props
+}) {
+  return (<div data-slot="card-content" className={cn("px-6", className)} {...props} />);
+}
+
+function CardFooter({
+  className,
+  ...props
+}) {
+  return (
+    <div
+      data-slot="card-footer"
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      {...props} />
+  );
+}
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
 }

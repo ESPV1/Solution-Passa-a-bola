@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import defaultAvatar from '../../assets/default-avatar.webp';
+import defaultAvatar from '@/assets/default-avatar.webp';
 
 export default function UserDropdown() {
     const { user, logout, deleteAccount } = useAuth();
@@ -61,7 +61,7 @@ export default function UserDropdown() {
                 className="flex items-center gap-3 hover:bg-rose-600 p-2 rounded-lg transition-colors duration-200"
             >
                 <img
-                    src={defaultAvatar}
+                    src={user?.profileURL || defaultAvatar}
                     alt={`Foto de perfil de ${user?.name}`}
                     className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md"
                 />

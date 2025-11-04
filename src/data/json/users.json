@@ -9,7 +9,7 @@
     "email": "john.smith@email.com",
     "password": "password123",
     "type": "player",
-    "profileURL": "https://example.com/john-photo.jpg",
+    "profileURL": "",
     "posicao": "Meio-campo",
     "time": "Corinthians",
     "nacionalidade": "Brasil",

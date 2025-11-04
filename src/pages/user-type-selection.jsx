@@ -51,7 +51,7 @@ export default function UserTypeSelection() {
               onMouseEnter={() => setHoveredType('fan')}
               onMouseLeave={() => setHoveredType(null)}
             >
-              <button className="w-full py-3 md:py-4 px-6 md:px-8 bg-rose-500 hover:bg-rose-600 text-white text-lg md:text-xl font-bold rounded-lg transition-colors duration-200">
+              <button className="cursor-pointer w-full py-3 md:py-4 px-6 md:px-8 bg-rose-500 hover:bg-rose-600 text-white text-lg md:text-xl font-bold rounded-lg transition-colors duration-200">
                 QUERO SER UM TORCEDOR
               </button>
             </Link>
@@ -62,7 +62,7 @@ export default function UserTypeSelection() {
               onMouseEnter={() => setHoveredType('player')}
               onMouseLeave={() => setHoveredType(null)}
             >
-              <button className="w-full py-3 md:py-4 px-6 md:px-8 bg-rose-500 hover:bg-rose-600 text-white text-lg md:text-xl font-bold rounded-lg transition-colors duration-200">
+              <button className="cursor-pointer w-full py-3 md:py-4 px-6 md:px-8 bg-rose-500 hover:bg-rose-600 text-white text-lg md:text-xl font-bold rounded-lg transition-colors duration-200">
                 QUERO SER UMA JOGADORA
               </button>
             </Link>
