@@ -15,13 +15,13 @@ export default function Times() {
           
           {/* Filtros - no mobile vem primeiro */}
           <aside className="order-1 lg:order-2 lg:col-span-1 rounded-2xl border border-rose-200 bg-white p-4 shadow-sm">
-            <div className="flex flex-wrap gap-2 mb-4">
-              <Link to={"/player-list"} asChild>
-                <button className="flex-1 sm:flex-none px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:cursor-pointer">
+            <div className="flex gap-2 mb-4">
+              <Link to={"/player-list"} className="flex-1">
+                <button className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:cursor-pointer hover:bg-slate-50 transition-colors">
                   Jogadoras
                 </button>
               </Link>
-              <button className="flex-1 sm:flex-none px-3 py-1.5 rounded-lg border border-rose-500 text-rose-700">
+              <button className="flex-1 px-3 py-1.5 rounded-lg bg-rose-500 text-white">
                 Times
               </button>
             </div>

@@ -1,25 +1,26 @@
 import React from "react";
 import users from "../data/json/users.json";
 import { Link } from "react-router-dom";
+import defaultAvatar from "@/assets/default-avatar.webp";
 
 export default function PlayerList() {
   return (
     <main className="min-h-screen w-full bg-white text-slate-900">
-      <section className="mx-auto w-full max-w-7xl px-6 py-8">
+      <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-8">
         <h1 className="text-2xl font-bold text-rose-600 mb-6">
           Lista de Jogadoras
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
           {/* filtros */}
-          <aside className="order-1 lg:order-2 col-span-1 rounded-2xl border border-rose-200 bg-white p-4 shadow-sm">
-            <div className="flex gap-3 mb-3">
-              <button className="px-3 py-1.5 rounded-lg border border-rose-500 text-rose-700">
+          <aside className="order-1 lg:order-2 lg:col-span-1 rounded-2xl border border-rose-200 bg-white p-4 shadow-sm">
+            <div className="flex gap-2 mb-4">
+              <button className="flex-1 px-3 py-1.5 rounded-lg bg-rose-500 text-white">
                 Jogadoras
               </button>
               <Link
                 to="/team-list"
-                className="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:cursor-pointer hover:bg-slate-50 transition-colors"
+                className="flex-1 text-center px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:cursor-pointer hover:bg-slate-50 transition-colors"
               >
                 Times
               </Link>
@@ -84,17 +85,17 @@ export default function PlayerList() {
           </aside>
 
           {/* lista de jogadoras */}
-          <div className="order-2 lg:order-1 col-span-3 rounded-2xl border border-rose-200 p-6 bg-white shadow-sm">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="order-2 lg:order-1 lg:col-span-3 rounded-2xl border border-rose-200 p-4 sm:p-6 bg-white shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
               {users.filter(user => user.type === "player").map((player) => (
                 <div
                   key={player.id}
-                  className="flex flex-col items-center justify-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 p-6"
+                  className="flex flex-col items-center justify-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 p-4 sm:p-6"
                 >
                   {/* foto da jogadora */}
-                  <div className="w-40 h-40 rounded-full bg-rose-100 flex items-center justify-center overflow-hidden">
+                  <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full bg-rose-100 flex items-center justify-center overflow-hidden">
                     <img
-                      src={"src/assets/default-avatar.webp"}
+                      src={player.profileURL || defaultAvatar}
                       alt={`Foto de ${player.name} ${player.surname}`}
                       className="w-full h-full object-cover"
                     />

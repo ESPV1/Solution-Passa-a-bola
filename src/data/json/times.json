@@ -46,7 +46,7 @@
         "nome": "Atléticas Rosa",
         "rank": "B",
         "estado": "Pernambuco",
-        "logo": "scr/assets/escudo-time.png"
+        "logo": "src/assets/escudo-time.png"
     },
     {
         "id": 8,
