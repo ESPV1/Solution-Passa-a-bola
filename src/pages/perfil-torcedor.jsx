@@ -1,5 +1,4 @@
 import React from "react";
-import defaultAvatar from "../assets/default-avatar.webp";
 import { useAuth } from "../hooks/useAuth";
 import eventos from "../data/json/eventos.json";
 
@@ -14,7 +13,7 @@ export default function PerfilTorcedor() {
           {/* Foto e dados do torcedor */}
           <aside className="w-full lg:w-1/3 flex flex-col items-center text-center gap-3">
             <img
-              src={user?.profileURL || defaultAvatar}
+              src={user?.profileURL || '/default-avatar.webp'}
               alt="Foto do torcedor"
               className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover bg-rose-50 border border-rose-200"
             />

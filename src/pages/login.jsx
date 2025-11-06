@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import player from "@/assets/player.png";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -61,7 +60,7 @@ export default function Login() {
         <div className="hidden md:flex md:w-1/2 items-center justify-center bg-gray-100">
           <img
             className="w-3/4 max-h-[80%] object-contain"
-            src={player}
+            src='/player.png'
             alt="Player"
           />
         </div>

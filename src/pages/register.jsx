@@ -16,10 +16,6 @@ import Form from "@/components/register/register-form";
 // página para caso o tipo de usuário não seja selecionado ou seja inválido
 import { UserTypeNotSelected } from "../components/register/usertype-not-selected";
 
-// imagens
-import fan from "@/assets/fan.png";
-import player from "@/assets/player-register.jpg";
-
 export default function Register() {
   const [searchParams] = useSearchParams();
   const userType = searchParams.get("type");
@@ -105,7 +101,7 @@ export default function Register() {
         <div className="hidden md:flex md:w-1/2 items-center justify-center bg-gray-100 p-6">
           <img
             className="w-full max-w-sm h-full object-cover rounded-lg"
-            src={userType === "fan" ? fan : player}
+            src={userType === "fan" ? '/fan.png' : '/player-register.jpg'}
             alt={userType === "fan" ? "Torcedor" : "Jogadora"}
           />
         </div>
