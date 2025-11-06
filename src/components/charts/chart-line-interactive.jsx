@@ -142,9 +142,9 @@ export function ChartLineInteractive() {
     <Card className="py-4 sm:py-0">
       <CardHeader className="flex flex-col items-stretch border-b !p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 pb-3 sm:pb-0">
-          <CardTitle>Vizualizações do seu perfil</CardTitle>
+          <CardTitle>Vizualizações do perfil</CardTitle>
           <CardDescription>
-            Mostrando as vizualizações do seu perfil nos três últimos meses
+            Mostrando as vizualizações do perfil nos três últimos meses
           </CardDescription>
         </div>
         <div className="flex">

@@ -41,7 +41,7 @@ export function ChartRadar() {
       <CardHeader className="items-center pb-4">
         <CardTitle>Desempenho</CardTitle>
         <CardDescription>
-          Veja seus pontos fracos e fortes
+          Pontos fortes e pontos fracos
         </CardDescription>
       </CardHeader>
       <CardContent className="pb-0">
@@ -63,7 +63,7 @@ export function ChartRadar() {
       </CardContent>
       <CardFooter className="flex-col gap-2 text-sm">
         <div className="flex items-center gap-2 leading-none font-medium">
-          Seu desempenho melhorou 5.2% nesse mês <TrendingUp className="h-4 w-4" />
+          O desempenho melhorou 5.2% nesse mês <TrendingUp className="h-4 w-4" />
         </div>
         <div className="text-muted-foreground flex items-center gap-2 leading-none">
           Janeiro - Junho de 2024
