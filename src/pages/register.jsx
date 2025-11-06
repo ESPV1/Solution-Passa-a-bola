@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // roteamento
 import { useSearchParams, Link, useNavigate } from "react-router-dom";
 
@@ -27,6 +27,7 @@ export default function Register() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const formContainerRef = useRef(null);
 
   const {
     register,
@@ -36,16 +37,23 @@ export default function Register() {
   } = useForm({
     resolver: zodResolver(createRegisterSchema(userType)),
     defaultValues: {
-      name: "Pedro Lucas",
-      surname: "Almeida Cunha",
-      cpf: "56267721892",
+      name: "",
+      surname: "",
+      cpf: "",
       gender: userType === "player" ? "female" : "male",
-      email: "pedrolucasalmeida7@hotmail.com",
-      password: "#Teste1234@",
-      confirmPassword: "#Teste1234@",
-      birthdate: "2006-11-21",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      birthdate: "",
     },
   });
+
+  // Scroll para o topo quando houver erros
+  useEffect(() => {
+    if (Object.keys(errors).length > 0 && formContainerRef.current) {
+      formContainerRef.current.scrollTop = 0;
+    }
+  }, [errors]);
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -95,7 +103,7 @@ export default function Register() {
   if (!isValidUserType) return <UserTypeNotSelected />;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-2xl w-full max-w-4xl overflow-hidden h-auto md:h-[600px]">
         {/* Imagem (só desktop) */}
         <div className="hidden md:flex md:w-1/2 items-center justify-center bg-gray-100 p-6">
@@ -107,7 +115,7 @@ export default function Register() {
         </div>
 
         {/* Formulário */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-10 space-y-8">
+        <div ref={formContainerRef} className="w-full overflow-y-auto md:w-1/2 flex flex-col p-6 md:p-10 space-y-8">
           <div className="font-bold text-center">
             <h2 className="text-3xl md:text-5xl text-rose-500">Passa a Bola</h2>
             <p className="mt-2 text-sm md:text-base text-gray-600">
