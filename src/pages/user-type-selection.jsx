@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import fotoTorcedor from '../assets/fan.png'
-import playerImage from '../assets/player-register.jpg'
 
 export default function UserTypeSelection() {
   const [hoveredType, setHoveredType] = useState(null)
 
   const getDisplayImage = () => {
-    if (hoveredType === 'fan') return fotoTorcedor
-    if (hoveredType === 'player') return playerImage
+    if (hoveredType === 'fan') return '/fan.png'
+    if (hoveredType === 'player') return '/player-register.jpg'
     return null
   }
 

@@ -6,7 +6,7 @@
         "idade": 37,
         "time": "Orlando Pride",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 95,
         "gols": 117,
         "assistencias": 54
@@ -18,7 +18,7 @@
         "idade": 39,
         "time": "São Paulo FC",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 88,
         "gols": 96,
         "assistencias": 32
@@ -30,7 +30,7 @@
         "idade": 45,
         "time": "São Paulo FC",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 85,
         "gols": 22,
         "assistencias": 67
@@ -42,7 +42,7 @@
         "idade": 30,
         "time": "Arsenal WFC",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 82,
         "gols": 8,
         "assistencias": 15
@@ -54,7 +54,7 @@
         "idade": 23,
         "time": "Racing Louisville",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 78,
         "gols": 12,
         "assistencias": 28
@@ -66,7 +66,7 @@
         "idade": 32,
         "time": "North Carolina Courage",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 84,
         "gols": 45,
         "assistencias": 38
@@ -78,7 +78,7 @@
         "idade": 29,
         "time": "Corinthians",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 79,
         "gols": 5,
         "assistencias": 22
@@ -90,7 +90,7 @@
         "idade": 29,
         "time": "Corinthians",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 81,
         "gols": 34,
         "assistencias": 25
@@ -102,7 +102,7 @@
         "idade": 27,
         "time": "Orlando Pride",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 77,
         "gols": 28,
         "assistencias": 19
@@ -114,7 +114,7 @@
         "idade": 26,
         "time": "Grêmio",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 76,
         "gols": 0,
         "assistencias": 3
@@ -126,7 +126,7 @@
         "idade": 30,
         "time": "Levante UD",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 74,
         "gols": 3,
         "assistencias": 18
@@ -138,7 +138,7 @@
         "idade": 31,
         "time": "Palmeiras",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 73,
         "gols": 6,
         "assistencias": 8
@@ -150,7 +150,7 @@
         "idade": 25,
         "time": "Santos",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 72,
         "gols": 15,
         "assistencias": 20
@@ -162,7 +162,7 @@
         "idade": 24,
         "time": "North Carolina Courage",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 80,
         "gols": 31,
         "assistencias": 24
@@ -174,7 +174,7 @@
         "idade": 26,
         "time": "Kansas City Current",
         "nacionalidade": "Brasil",
-        "foto": "src/assets/default-avatar.webp",
+        "foto": "/default-avatar.webp",
         "rating": 75,
         "gols": 4,
         "assistencias": 12

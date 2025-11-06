@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
-import defaultAvatar from "@/assets/default-avatar.webp";
 import { useAuth } from "../hooks/useAuth";
 import { useData } from "../hooks/useData";
 import eventos from "../data/json/eventos.json";
@@ -180,12 +179,12 @@ export default function PerfilJogadora() {
                       </h1>
                       <div className="flex items-center gap-2 mb-2">
                         <img
-                          src="/src/assets/brazil-flag.png"
+                          src="/brazil-flag.png"
                           alt="Brasil"
                           className="w-6 h-4 sm:w-7 sm:h-5 md:w-9 md:h-6 rounded"
                         />
                         <img
-                          src="/src/assets/corinthians.png"
+                          src="/corinthians.png"
                           alt="Team"
                           className="w-5 h-5 md:w-6 md:h-6"
                         />
@@ -196,7 +195,7 @@ export default function PerfilJogadora() {
                   <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 mb-5 sm:mb-6 font-bold">
                     <div className="flex items-center gap-3 mb-4">
                       <img
-                        src="/src/assets/corinthians.png"
+                        src="/corinthians.png"
                         alt="Team logo"
                         className="w-8 h-8 md:w-10 md:h-10"
                       />
@@ -302,7 +301,7 @@ export default function PerfilJogadora() {
                       >
                         <div className="flex items-center gap-4">
                           <img
-                            src="/src/assets/corinthians.png"
+                            src="/corinthians.png"
                             alt="Team 1"
                             className="w-6 h-6 md:w-8 md:h-8"
                           />
@@ -310,7 +309,7 @@ export default function PerfilJogadora() {
                             {game.result}
                           </span>
                           <img
-                            src="/src/assets/saopaulo.png"
+                            src="/saopaulo.png"
                             alt="Team 2"
                             className="w-6 h-6 md:w-8 md:h-8"
                           />

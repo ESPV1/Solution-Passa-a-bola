@@ -1,7 +1,6 @@
 import React from "react";
 import users from "../data/json/users.json";
 import { Link } from "react-router-dom";
-import defaultAvatar from "@/assets/default-avatar.webp";
 
 export default function PlayerList() {
   return (
@@ -95,7 +94,7 @@ export default function PlayerList() {
                   {/* foto da jogadora */}
                   <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full bg-rose-100 flex items-center justify-center overflow-hidden">
                     <img
-                      src={player.profileURL || defaultAvatar}
+                      src={player.profileURL || '/default-avatar.webp'}
                       alt={`Foto de ${player.name} ${player.surname}`}
                       className="w-full h-full object-cover"
                     />
