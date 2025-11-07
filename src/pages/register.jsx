@@ -103,7 +103,7 @@ export default function Register() {
   if (!isValidUserType) return <UserTypeNotSelected />;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-2xl w-full max-w-4xl overflow-hidden h-auto md:h-[600px]">
         {/* Imagem (só desktop) */}
         <div className="hidden md:flex md:w-1/2 items-center justify-center bg-gray-100 p-6">

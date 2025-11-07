@@ -129,7 +129,7 @@ export default function PerfilJogadora() {
             </button>
           </div>
 
-          {/* indicadores de página */}
+          {/* indicadores de página - apenas desktop */}
           <div className="flex gap-2">
             {[0, 1].map((page) => (
               <div
@@ -397,19 +397,6 @@ export default function PerfilJogadora() {
         </button>
       )}
 
-      {/* CTA de navegação mobile (opcional) */}
-      <div className="md:hidden fixed bottom-3 left-0 right-0 flex items-center justify-center gap-2 z-20">
-        {[0, 1].map((i) => (
-          <button
-            key={i}
-            onClick={() => scrollToPage(i)}
-            className={`h-2.5 w-2.5 rounded-full ${
-              currentPage === i ? "bg-rose-500" : "bg-gray-300"
-            }`}
-            aria-label={`Ir para página ${i + 1}`}
-          />
-        ))}
-      </div>
     </main>
   );
 }
